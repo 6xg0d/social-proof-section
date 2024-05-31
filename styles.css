@@ -17,8 +17,10 @@ body {
 	background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
 	background-repeat: no-repeat, no-repeat;
 	background-position: left top, left bottom;
+	min-width: 320px;
 }
-main {
+main,
+.wrapper {
 	display: flex;
   flex-direction: column;
   row-gap: 30px;
@@ -38,21 +40,27 @@ main {
 .intro-section > p {
 	color: var(--neutral-dark-grayish-magenta);
 	font-weight: 500;
+	line-height: 1.3;
 }
 /*RATING SECTION*/
 .rating-section {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
+	align-items: center;
 }
 .rating-card {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
 	background-color: var(--neutral-light-grayish-magenta);
 	border-radius: 5px;
 	padding: 15px;
 	row-gap: 15px;
+	max-width: 450px;
+	width: 100%;
 }
 .rating-card > .stars-section {
 	display: flex;
@@ -76,7 +84,7 @@ main {
 	background-color: var(--primary-very-dark-magenta);
 	color: var(--neutral-white);
 	font-weight: 500;
-	padding: 30px;
+	padding: 30px 25px;
 	border-radius: 10px;
 }
 .card > .buyer {
@@ -97,4 +105,61 @@ main {
 .card > .buyer > .buyer-info > .verified {
 	color: var(--primary-soft-pink);
 	font-weight: 500;
+}
+.card > p {
+	line-height: 1.5;
+}
+/*RESPONSIVE*/
+@media (min-width: 992px) {
+	body {
+		background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+		background-repeat: no-repeat, no-repeat;
+		background-position: left top, left bottom;
+	}
+	main {
+		row-gap: 50px;
+	}
+	.wrapper {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.intro-section {
+		flex-shrink: 1;
+		width: 40%;
+	}
+	.rating-section {
+		flex-shrink: 0;
+	}
+	.intro-section > p,
+	.intro-section > h1 {
+		text-align: left;
+	}
+	.rating-card {
+		flex-direction: row;
+		column-gap: 30px;
+	}
+	.rating-card.card-one {
+		position: relative;
+		right: 70px;
+	}
+	.rating-card.card-two {
+		position: relative;
+		right: 35px;
+	}
+	.testimonials-section {
+		flex-direction: row;
+		column-gap: 25px;
+		justify-content: space-between;
+	}
+	.testimonials-section > .card {
+		max-width: 325px;
+	}
+	.testimonials-section > .buyer-two {
+		position: relative;
+		top: 20px;
+	}
+	.testimonials-section > .buyer-three {
+		position: relative;
+		top: 40px;
 }
